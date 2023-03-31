@@ -39,8 +39,16 @@ function updateForm()  {
 
 function handleSubmit(event) {
     event.preventDefault();
+
+    if (inputEl.value && messageEl.value) {
     console.log(formData);
     localStorage.clear();
     event.currentTarget.reset();
-
+    formData = {
+        email: "",
+        message: ""
+    }
+    } else {
+        alert("Please make sure all fields are filled!")
+    }
 }
